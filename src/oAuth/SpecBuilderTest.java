@@ -48,6 +48,7 @@ AddPlace p = new AddPlace();
 		.body(p);
 		
 		ResponseSpecification resspec = new ResponseSpecBuilder().expectStatusCode(200).expectContentType(ContentType.JSON).build();
+		
 		Response response = res.when().post("/maps/api/place/add/json").then()
 		.spec(resspec).extract().response();
 		
